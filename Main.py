@@ -7,7 +7,7 @@ import re  # This is for removing all whitespaces and non-alphanumeric character
 def is_palindrome(string, case_insensitive=False, whitespace_insensitive=False, ignore_punctuation=False):
     if not isinstance(string, str):  # Check if the input is a String or not. If not it returns an error
         if not isinstance(string, int) or isinstance(string, bool):
-            # The above line checks if the input is not an int or is a bool (a subclass of int)
+            # The above line checks if the input is not an int or is a bool
             # to make sure correct grammar is used in the error message
             raise TypeError(f"The input must be a String, not a {type(string).__name__}")  # Raise type error
         else:
@@ -15,14 +15,32 @@ def is_palindrome(string, case_insensitive=False, whitespace_insensitive=False, 
             # The above line raises type error, but it's an "an" instead of an "a"
 
     if not isinstance(case_insensitive, bool):  # Check if case_insensitive is a boolean
-        raise TypeError(f"case_insensitive must be a Boolean, not a {type(case_insensitive).__name__}")
-        # The above line raises a type error
+        if not isinstance(string, int) or isinstance(string, bool):
+            # The above line checks if the input is not an int or is a bool
+            # to make sure correct grammar is used in the error message
+            raise TypeError(f"case_insensitive must be a Boolean, not a {type(case_insensitive).__name__}")
+            # The above line raises a type error
+        else:
+            raise TypeError(f"case_insensitive must be a Boolean, not an {type(case_insensitive).__name__}")
+            # The above line raises type error, but it's an "an" instead of an "a"
     if not isinstance(whitespace_insensitive, bool):  # Check if whitespace_insensitive is a boolean
-        raise TypeError(f"whitespace_insensitive must be a Boolean, not a {type(whitespace_insensitive).__name__}")
-        # The above line raises a type error
+        if not isinstance(string, int) or isinstance(string, bool):
+            # The above line checks if the input is not an int or is a bool (a subclass of int)
+            # to make sure correct grammar is used in the error message
+            raise TypeError(f"case_insensitive must be a Boolean, not a {type(whitespace_insensitive).__name__}")
+            # The above line raises a type error
+        else:
+            raise TypeError(f"case_insensitive must be a Boolean, not an {type(whitespace_insensitive).__name__}")
+            # The above line raises type error, but it's an "an" instead of an "a"
     if not isinstance(ignore_punctuation, bool):  # Check if ignore_punctuation is a boolean
-        raise TypeError(f"ignore_punctuation must be a Boolean, not a {type(ignore_punctuation).__name__}")
-        # The above line raises a type error
+        if not isinstance(string, int) or isinstance(string, bool):
+            # The above line checks if the input is not an int or is a bool
+            # to make sure correct grammar is used in the error message
+            raise TypeError(f"case_insensitive must be a Boolean, not a {type(ignore_punctuation).__name__}")
+            # The above line raises a type error
+        else:
+            raise TypeError(f"case_insensitive must be a Boolean, not an {type(ignore_punctuation).__name__}")
+            # The above line raises type error, but it's an "an" instead of an "a"
 
     if case_insensitive:  # Check if case_insensitive is true or not
         string = string.lower()  # Converts the input into all lowercase if it is
